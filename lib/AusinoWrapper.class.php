@@ -1,15 +1,22 @@
 <?php
 
 require_once "RestWrapper.class.php";
+require_once "Configuration.class.php";
 
 class AusinoWrapper
 {
-    public static function getDataFromField(){
-        // $url = Configuration::API_WBPATE_URL."GetAssociazioneByRfidCode?rfidCode=".$rfidCode;
-        $url = 'https://aquaexportapi.azurewebsites.net/api/External/v1/export?FromDate=01%2F01%2F2021&ToDate=01%2F07%2F2021';
-        $key = 'C291C4EAFC0571E90AB6D31C2FE37E16296405C188C38';
+    public static function getAllDataFromField($FromDate, $ToDate, $SerialNumber=''){
+        $url = 'https://aquaexportapi.azurewebsites.net/api/External/v1/export';
+        $url .= '?FromDate=' . $FromDate . '&ToDate=' . $ToDate;
+
+        if ($SerialNumber!==''){
+            $url .= '&SerialNumber=' . $SerialNumber;
+        }
+        $key = Configuration::AQUA_ROBUR_KEY;
         return RestWrapper::getFromUrlByKey($url,$key);
     }
+
+
 }
 
 /* STUB */

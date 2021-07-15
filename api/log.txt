@@ -1,0 +1,23 @@
+15-07-2021 10:45:32|(::1)|exportData.php||https://aquaexportapi.azurewebsites.net/api/External/v1/export?FromDate=2021-01-12%2023:55&ToDate=2021-01-13%2023:55&SerialNumber=1000247
+15-07-2021 10:46:41|(::1)|exportData.php||https://aquaexportapi.azurewebsites.net/api/External/v1/export?FromDate=2021-01-12%2023:55&ToDate=2021-01-13%2023:55&SerialNumber=1000247
+15-07-2021 10:46:50|(::1)|exportData.php|2|https://aquaexportapi.azurewebsites.net/api/External/v1/export?FromDate=2021-01-12%2023:55&ToDate=2021-01-13%2023:55&SerialNumber=1000247
+15-07-2021 10:47:18|(::1)|exportData.php||
+15-07-2021 10:47:36|(::1)|exportData.php||
+15-07-2021 10:47:46|(::1)|exportData.php||No telemetry data found!
+15-07-2021 10:48:36|(::1)|exportData.php||404
+15-07-2021 10:49:24|(::1)|exportData.php||200
+15-07-2021 10:53:50|CLIENT_AUTORIZZATO(::1)|exportData.php|startTimeTimestamp|200
+15-07-2021 10:53:50|CLIENT_AUTORIZZATO(::1)|exportData.php|startTimeTimestamp|Array
+15-07-2021 10:53:50|CLIENT_AUTORIZZATO(::1)|exportData.php|startTimeTimestamp|
+15-07-2021 10:54:21|CLIENT_AUTORIZZATO(::1)|exportData.php|startTimeTimestamp|404
+15-07-2021 10:54:21|CLIENT_AUTORIZZATO(::1)|exportData.php|startTimeTimestamp|
+15-07-2021 10:54:21|CLIENT_AUTORIZZATO(::1)|exportData.php|startTimeTimestamp|
+15-07-2021 10:56:15|CLIENT_AUTORIZZATO(::1)|exportData.php|startTimeTimestamp|404
+15-07-2021 10:56:15|CLIENT_AUTORIZZATO(::1)|exportData.php|startTimeTimestamp|
+15-07-2021 10:56:15|CLIENT_AUTORIZZATO(::1)|exportData.php|startTimeTimestamp|
+15-07-2021 10:57:21|CLIENT_AUTORIZZATO(::1)|exportData.php|startTimeTimestamp|404
+15-07-2021 10:57:21|CLIENT_AUTORIZZATO(::1)|exportData.php|startTimeTimestamp|
+15-07-2021 10:57:21|CLIENT_AUTORIZZATO(::1)|exportData.php|startTimeTimestamp|
+15-07-2021 10:57:30|CLIENT_AUTORIZZATO(::1)|exportData.php|startTimeTimestamp|200
+15-07-2021 10:57:30|CLIENT_AUTORIZZATO(::1)|exportData.php|startTimeTimestamp|Array
+15-07-2021 10:57:30|CLIENT_AUTORIZZATO(::1)|exportData.php|startTimeTimestamp|

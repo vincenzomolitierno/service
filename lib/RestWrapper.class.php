@@ -18,6 +18,7 @@ require_once "HttpResponse.class.php";
 class RestWrapper
 {
     // vincenzo 11/07/2021
+    // FOR AQUA ROBUR REST CALL
     public static function getFromUrlByKey($url,$key){
 
         $arrResult = array();
@@ -37,7 +38,21 @@ class RestWrapper
         }
         else{
             $arrResult[HttpResponse::CODICE_ESITO] = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-            $arrResult[HttpResponse::DESCRIZIONE_ESITO] = json_decode($content,true);
+            // modify the json for Ausonia specification 
+            //si rimuovono i campi PskId e IoId
+            $modifiedContent = json_decode($content,true);
+
+            if($arrResult[HttpResponse::CODICE_ESITO]==200){
+                for ($i=0; $i < count($modifiedContent['ExportModels']); $i++) { 
+                    // Log::add('','',$modifiedContent['ExportModels'][$i]['PskId']);
+                    // Log::add('','',$modifiedContent['ExportModels'][$i]['IoId']);
+                    unset($modifiedContent['ExportModels'][$i]['PskId']);
+                    unset($modifiedContent['ExportModels'][$i]['IoId']);
+                }
+            }
+
+            // $arrResult[HttpResponse::DESCRIZIONE_ESITO] = json_decode($content,true);
+            $arrResult[HttpResponse::DESCRIZIONE_ESITO] = $modifiedContent;
             $arrResult[HttpResponse::ERRORE] = false;
         }
 
