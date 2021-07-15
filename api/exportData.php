@@ -4,6 +4,7 @@ require_once("../lib/Authorization.class.php");
 require_once("../lib/AusinoWrapper.class.php");
 require_once("../lib/Log.class.php");
 
+Log::add('currentdir', Authorization::AUTHORIZED, getcwd());
 
 if (Authorization::isAuthorizedClient($_SERVER['REMOTE_ADDR'])) {
 
