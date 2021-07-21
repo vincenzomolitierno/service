@@ -1,8 +1,8 @@
 <?php
 
-require_once dirname(__DIR__) . '/lib/Authorization.class.php';
-require_once dirname(__DIR__) . '/lib/AusinoWrapper.class.php';
-require_once dirname(__DIR__) . '/lib/Log.class.php';
+require_once '../lib/Authorization.class.php';
+require_once '../lib/AusinoWrapper.class.php';
+require_once '../lib/Log.class.php';
 
 if (Authorization::isAuthorizedClient($_SERVER['REMOTE_ADDR'])) {
 

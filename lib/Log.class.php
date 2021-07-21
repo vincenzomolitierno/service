@@ -16,7 +16,7 @@ class Log{
         }catch (Exception $e){}
     }
 
-    public static function log($dati){
+    public static function write($dati){
         try{
             $data_attuale = new DateTime(null, new DateTimeZone('Europe/Rome'));
             $myfile = fopen(Configuration::FILE_LOG, "a+");

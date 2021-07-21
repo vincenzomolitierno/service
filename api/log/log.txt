@@ -1,0 +1,13 @@
+[Wed Jul 21 19:16:11.108650 2021] [php7:error] [pid 23836] [client 93.35.208.85:43130] PHP Fatal error:  Constructor Log::log() cannot be static in /var/www/DI/service/lib/Log.class.php on line 5
+[Wed Jul 21 19:16:12.301839 2021] [php7:error] [pid 23832] [client 93.35.208.85:43131] PHP Fatal error:  Constructor Log::log() cannot be static in /var/www/DI/service/lib/Log.class.php on line 5
+[Wed Jul 21 19:16:14.995044 2021] [php7:error] [pid 23833] [client 93.35.208.85:43133] PHP Fatal error:  Constructor Log::log() cannot be static in /var/www/DI/service/lib/Log.class.php on line 5
+[Wed Jul 21 19:19:29.785088 2021] [php7:error] [pid 24557] [client 93.35.208.85:43171] PHP Fatal error:  Constructor Log::log() cannot be static in /var/www/DI/service/lib/Log.class.php on line 5
+[Wed Jul 21 19:19:30.627288 2021] [php7:error] [pid 24558] [client 93.35.208.85:43172] PHP Fatal error:  Constructor Log::log() cannot be static in /var/www/DI/service/lib/Log.class.php on line 5
+[Wed Jul 21 19:20:52.949451 2021] [php7:error] [pid 24567] [client 93.35.208.85:43183] PHP Fatal error:  Constructor Log::log() cannot be static in /var/www/DI/service/lib/Log.class.php on line 5
+[Wed Jul 21 19:21:07.420782 2021] [php7:error] [pid 24557] [client 93.35.208.85:43188] PHP Fatal error:  Constructor Log::log() cannot be static in /var/www/DI/service/lib/Log.class.php on line 5
+[Wed Jul 21 19:23:42.654682 2021] [php7:error] [pid 25363] [client 93.35.208.85:43229] PHP Fatal error:  Constructor Log::log() cannot be static in /var/www/DI/service/lib/Log.class.php on line 5
+[Wed Jul 21 20:10:38.584136 2021] [php7:error] [pid 25363] [client 93.35.208.85:43200] PHP Fatal error:  Constructor Log::log() cannot be static in /var/www/DI/service/lib/Log.class.php on line 5
+[Wed Jul 21 20:10:41.741602 2021] [php7:error] [pid 25360] [client 93.35.208.85:43203] PHP Fatal error:  Constructor Log::log() cannot be static in /var/www/DI/service/lib/Log.class.php on line 5
+[Wed Jul 21 20:11:10.201249 2021] [php7:error] [pid 25359] [client 93.35.208.85:43213] PHP Fatal error:  Constructor Log::log() cannot be static in /var/www/DI/service/lib/Log.class.php on line 5
+[Wed Jul 21 20:11:12.755012 2021] [php7:error] [pid 25361] [client 93.35.208.85:43214] PHP Fatal error:  Constructor Log::log() cannot be static in /var/www/DI/service/lib/Log.class.php on line 5
+[Wed Jul 21 21:02:39.847284 2021] [php7:error] [pid 25363] [client 93.46.125.59:58333] PHP Fatal error:  Constructor Log::log() cannot be static in /var/www/DI/service/lib/Log.class.php on line 5

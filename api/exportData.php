@@ -1,12 +1,8 @@
 <?php
 
-require_once dirname(__DIR__) . '/lib/Authorization.class.php';
-require_once dirname(__DIR__) . '/lib/AusinoWrapper.class.php';
-require_once dirname(__DIR__) . '/lib/Log.class.php';
-
-    // 2021-01-06T23:55
-    // starttime is chronologically the last timepoint
-    // endtime is chronologically the first timepoint
+require_once '../lib/Authorization.class.php';
+require_once '../lib/AusinoWrapper.class.php';
+require_once '../lib/Log.class.php';
 
 if (Authorization::isAuthorizedClient($_SERVER['REMOTE_ADDR'])) {
  
@@ -20,7 +16,7 @@ if (Authorization::isAuthorizedClient($_SERVER['REMOTE_ADDR'])) {
         header('Content-type: application/json');
         echo $json;
     
-    } else if(isset($_GET['start']) && isset($_GET['serial'])) {
+    } else if(isset($_GET['start']) && isset($_GET['serial']) && $_GET['start']!= '' && $_GET['serial']!= '') {
         
         $SerialNumber = $_GET['serial'];
         $UTC = new DateTimeZone("UTC");
@@ -48,7 +44,7 @@ if (Authorization::isAuthorizedClient($_SERVER['REMOTE_ADDR'])) {
             if ($arrHttpResponse[HttpResponse::CODICE_ESITO]!=200) 
                 echo $arrHttpResponse[HttpResponse::CODICE_ESITO] ;
             else
-                echo json_encode($arrHttpResponse[HttpResponse::DESCRIZIONE_ESITO]);                
+                echo json_encode($arrHttpResponse[HttpResponse::DESCRIZIONE_ESITO]);                 
         }
         else{
             echo json_encode($arrHttpResponse);

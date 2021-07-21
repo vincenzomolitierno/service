@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            padding: 20px;  
+            font-size: 20px;  
+        }
+        table, th, td{
+            margin-bottom: 15px;
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 10px;
+        }
+        th{
+            text-decoration: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>REST API CALL</h1>
+    <hr>
+    <table>
+        <tr>
+            <th>endpoints</th>
+            <td>/exportAllData.php</td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <th>parameter</th>
+            <td>start</td>
+        </tr>  
+        <tr>
+            <th>value format</th>
+            <td>dd-mm-YYYYThh:m</td>
+        </tr>        
+        <tr>
+            <th>type</th>
+            <td>mandatory</td>
+        </tr>                 
+    </table>  
+    <table>
+        <tr>
+            <th>example</th>
+            <td>/exportAllData.php?start=12-07-2021T18:22</td>
+        </tr>
+    </table>      
+    <hr>
+    <table>
+        <tr>
+            <th>endpoints</th>
+            <td>/exportData.php</td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <th>parameter</th>
+            <td>start</td>
+        </tr>  
+        <tr>
+            <th>value format</th>
+            <td>dd-mm-YYYYThh:m</td>
+        </tr> 
+        <tr>
+            <th>type</th>
+            <td>mandatory</td>
+        </tr>                        
+    </table>  
+    <table>
+        <tr>
+            <th>parameter</th>
+            <td>serial</td>
+        </tr>  
+        <tr>
+            <th>value format</th>
+            <td>####### (seven digit)</td>
+        </tr> 
+        <tr>
+            <th>type</th>
+            <td>mandatory</td>
+        </tr>                        
+    </table>   
+    <table>
+        <tr>
+            <th>example</th>
+            <td>/exportData.php?start=13-07-2021T09:22&serial=1000247</td>
+        </tr>
+    </table>           
+    <hr>
+    
+    
+</body>
+</html>

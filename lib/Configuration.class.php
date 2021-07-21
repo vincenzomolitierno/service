@@ -9,7 +9,7 @@ class Configuration{
     const FILE_LOG = "log.txt";
 
     // ############
-    const IP_DISPOSITIVO_ABILITATO_1 = "192.168.3.100";
+    const IP_DISPOSITIVO_ABILITATO_1 = "192.168.3.100"; // IP DA MODIFICARE
     public static $ip_dispositivi = array(self::IP_DISPOSITIVO_ABILITATO_1, "::1" ,"127.0.0.1");
 
     // ############
