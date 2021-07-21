@@ -34,7 +34,7 @@ if (Authorization::isAuthorizedClient($_SERVER['REMOTE_ADDR'])) {
         }
         
         // *** REST Aqua Robur CALL BY CLASS AusinoWrapper
-        $arrHttpResponse = AusinoWrapper::getAllDataFromField($endTime->format('Y-m-d%20H:i'),$startTime->format('Y-m-d%20H:i'));
+        $arrHttpResponse = AusinoWrapper::getAllDataFromField($endTime->format('Y-m-d%20H:i'),$startTime->format('Y-m-d%20H:i'), Authorization::getValidKey());
 
         header('HTTP/1.1 '.$arrHttpResponse[HttpResponse::CODICE_ESITO]);
         header('Content-type: application/json');    

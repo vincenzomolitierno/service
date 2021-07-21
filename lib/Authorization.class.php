@@ -4,10 +4,11 @@ require_once 'Configuration.class.php';
 
 class Authorization
 {
-
     const ERROR_NOT_AUTHORIZED = "ERRORE_CLIENT_NON_AUTORIZZATO";
     const AUTHORIZED = "CLIENT_AUTORIZZATO";
     const ERROR_INVALID_KEY = "INVALID KEY VALUE";
+
+    static $validKey = '';
 
     public static function isAuthorizedClient($ip)
     {
@@ -22,14 +23,28 @@ class Authorization
     {
         $headers = apache_request_headers();
         if (key_exists('Api-Key', $headers)) {
-            $keyHash = file_get_contents(dirname(__DIR__) . '/settings/' . Configuration::AQUA_ROBUR_KEY_FILE);
-
-            if (password_verify($headers['Api-Key'], $keyHash)) { //
-
+            if (password_verify($headers['Api-Key'], Configuration::SERVICE_KEY_HASH)) { 
                 return true;
             }
         }
 
         return false; // in case of wrong value or Api-Key not set
+    }
+
+    public static function decryptAquaRoburApiKey()
+    {
+        $headers = apache_request_headers();
+        if (key_exists('Api-Key', $headers)) {
+            if (password_verify($headers['Api-Key'], Configuration::SERVICE_KEY_HASH)) {
+                Authorization::$validKey =  $headers['Api-Key'];
+                return true;
+            }
+        }
+
+        return false; // in case of wrong value or Api-Key not set
+    }
+
+    public static function getValidKey(){
+        return Authorization::$validKey;
     }
 }

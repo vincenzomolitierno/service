@@ -14,7 +14,11 @@ class Configuration{
     public static $ip_dispositivi = array(self::IP_DISPOSITIVO_ABILITATO_1, "::1" ,"127.0.0.1");
 
     // ############
-    const AQUA_ROBUR_KEY = 'C291C4EAFC0571E90AB6D31C2FE37E16296405C188C38';
-    const AQUA_ROBUR_KEY_FILE = 'key_file.txt';
+    const SERVICE_KEY_HASH = '$2y$10$ckTzhrFG8Dyjdm6YFCVfAeKzriWgFLpPeHd7Voe3wUTzEy5w8LMBe';
+
+    const CIPHER = 'aes-128-gcm';
+    const IV_BASE_64 = 'j6sjfEF592e6sxHO';
+    const TAG_BASE_64 = 'i0J4flW7CygcpoFPql3iKQ==';
+    const AQUA_ROBUR_CRYPTED_KEY = 'xGYtC92sy0107PAe5AU8G9FdG5wDHhYSayhoS1o6MMn/OZQsbOmHtYSkFIjI';
 
 }
