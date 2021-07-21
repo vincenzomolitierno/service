@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: massimo.brunale
- * Date: 18/03/2021
- * Time: 12:56
- */
 
 class RestCurl{
 

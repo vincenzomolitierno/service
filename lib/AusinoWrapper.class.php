@@ -1,7 +1,7 @@
 <?php
 
-require_once "RestWrapper.class.php";
-require_once "Configuration.class.php";
+require_once 'RestWrapper.class.php';
+require_once 'Configuration.class.php';
 
 class AusinoWrapper
 {
@@ -15,9 +15,5 @@ class AusinoWrapper
         $key = Configuration::AQUA_ROBUR_KEY;
         return RestWrapper::getFromUrlByKey($url,$key);
     }
-
-
 }
 
-/* STUB */
-//echo WbpateWrapper::GetAssociazioneByRfidCode("63cfe34d");

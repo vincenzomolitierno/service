@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: massimo.brunale
- * Date: 14/05/2021
- * Time: 13:25
- */
 
 class Configuration{
 

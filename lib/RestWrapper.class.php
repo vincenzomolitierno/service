@@ -1,23 +1,15 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: massimo.brunale
- * Date: 19/05/2021
- * Time: 10:12
- */
-
 /*
  * wrapper per le chiamate REST ad API
  */
 
-require_once "Configuration.class.php";
-require_once "RestCurl.class.php";
-require_once "HttpResponse.class.php";
+require_once 'Configuration.class.php';
+require_once 'RestCurl.class.php';
+require_once 'HttpResponse.class.php';
 
 class RestWrapper
 {
-    // vincenzo 11/07/2021
     // FOR AQUA ROBUR REST CALL
     public static function getFromUrlByKey($url,$key){
 

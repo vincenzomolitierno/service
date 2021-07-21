@@ -1,12 +1,6 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: massimo.brunale
- * Date: 21/05/2021
- * Time: 14:33
- */
-require_once("Configuration.class.php");
+require_once('Configuration.class.php');
 require_once("Notifier/Notifier.class.php");
 
 class Notifiche

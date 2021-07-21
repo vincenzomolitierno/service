@@ -1,11 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: massimo.brunale
- * Date: 12/05/2021
- * Time: 12:56
- */
-require_once "Configuration.class.php";
+
+require_once 'Configuration.class.php';
 
 class Authorization{
 
