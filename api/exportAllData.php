@@ -1,17 +1,22 @@
 <?php
 
-require_once dirname(__FILE__) . '/lib/Authorization.class.php';
-require_once dirname(__FILE__) . '/lib/AusinoWrapper.class.php';
-require_once dirname(__FILE__) . '/lib/Log.class.php';
-
+require_once dirname(__DIR__) . '/lib/Authorization.class.php';
+require_once dirname(__DIR__) . '/lib/AusinoWrapper.class.php';
+require_once dirname(__DIR__) . '/lib/Log.class.php';
 
 if (Authorization::isAuthorizedClient($_SERVER['REMOTE_ADDR'])) {
 
-    // 2021-01-06T23:55
-    // starttime is chronologically the last timepoint
-    // endtime is chronologically the first timepoint
-
-    if(isset($_GET['start'])) {
+    if(!Authorization::isValidKey()){
+        $codice_esito = HttpResponse::UNAUTHORIZED;
+        $descrizione_esito = Authorization::ERROR_INVALID_KEY." - from client: ".$_SERVER['REMOTE_ADDR'];
+        $errore = true;
+        $json = HttpResponse::createJsonResponse($codice_esito, $descrizione_esito, $errore);
+    
+        header('HTTP/1.1 '.HttpResponse::UNAUTHORIZED);
+        header('Content-type: application/json');
+        echo $json;
+    
+    } else if(isset($_GET['start'])) {
         $UTC = new DateTimeZone("UTC");
 
         $startTime = new DateTime($_GET['start'],$UTC); // the last timepoint
@@ -30,8 +35,7 @@ if (Authorization::isAuthorizedClient($_SERVER['REMOTE_ADDR'])) {
         // Log::add('startTimeTimestamp', Authorization::AUTHORIZED, $startTime->format('Y-m-d%20H:i')); 
         // Log::add('endTimeTimestamp', Authorization::AUTHORIZED, $endTime->format('Y-m-d%20H:i')); 
         
-        // *************
-        // *** REST  Aqua Robur CALL BY CLASS AusinoWrapper
+        // *** REST Aqua Robur CALL BY CLASS AusinoWrapper
         $arrHttpResponse = AusinoWrapper::getAllDataFromField($endTime->format('Y-m-d%20H:i'),$startTime->format('Y-m-d%20H:i'));
 
         header('HTTP/1.1 '.$arrHttpResponse[HttpResponse::CODICE_ESITO]);
@@ -54,9 +58,7 @@ if (Authorization::isAuthorizedClient($_SERVER['REMOTE_ADDR'])) {
     $codice_esito = HttpResponse::FORBIDDEN;
     $descrizione_esito = Authorization::ERROR_NOT_AUTHORIZED.": ".$_SERVER['REMOTE_ADDR'];
     $errore = true;
-
     $json = HttpResponse::createJsonResponse($codice_esito, $descrizione_esito, $errore);
-    Log::add('!!!', Authorization::ERROR_NOT_AUTHORIZED,$json);
 
     header('HTTP/1.1 '.HttpResponse::FORBIDDEN);
     header('Content-type: application/json');

@@ -16,4 +16,14 @@ class Log{
         }catch (Exception $e){}
     }
 
+    public static function log($dati){
+        try{
+            $data_attuale = new DateTime(null, new DateTimeZone('Europe/Rome'));
+            $myfile = fopen(Configuration::FILE_LOG, "a+");
+            $txt = $data_attuale->format("d-m-Y H:i:s").self::SEPARATORE."(".$_SERVER['REMOTE_ADDR'].")".self::SEPARATORE.basename($_SERVER['PHP_SELF']).self::SEPARATORE.$dati."\n";
+            fwrite($myfile, $txt);
+            fclose($myfile);
+        }catch (Exception $e){}
+    }
+
 }

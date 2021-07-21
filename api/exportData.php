@@ -1,11 +1,11 @@
 <?php
 
-require_once dirname(__FILE__) . '/lib/Authorization.class.php';
-require_once dirname(__FILE__) . '/lib/AusinoWrapper.class.php';
-require_once dirname(__FILE__) . '/lib/Log.class.php';
+require_once dirname(__DIR__) . '/lib/Authorization.class.php';
+require_once dirname(__DIR__) . '/lib/AusinoWrapper.class.php';
+require_once dirname(__DIR__) . '/lib/Log.class.php';
 
 if (Authorization::isAuthorizedClient($_SERVER['REMOTE_ADDR'])) {
-
+ 
     // 2021-01-06T23:55
     // starttime is chronologically the last timepoint
     // endtime is chronologically the first timepoint
