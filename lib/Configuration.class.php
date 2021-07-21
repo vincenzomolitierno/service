@@ -2,8 +2,7 @@
 
 class Configuration{
 
-    const VERSIONE_REST_SERVER = "Ver 1.7 11-06-2021";
-    const REFRESH_INDEX_PAGE = "60";
+    const VERSIONE_REST_SERVER = "Ver 1.0 21-07-2021";
 
     const API_AQUA_ROBUR_URL = 'https://aquaexportapi.azurewebsites.net/api/External/v1/export';
 
