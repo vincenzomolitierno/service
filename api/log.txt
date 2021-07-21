@@ -1,9 +1,20 @@
-21-07-2021 14:22:49|(::1)|exportAllData.php|keyFile D:\XAMPP_8\htdocs\service/settings/key_file.txt
-21-07-2021 14:22:49|(::1)|exportAllData.php|keyFile 
-21-07-2021 14:23:46|(::1)|exportAllData.php|keyFile D:\XAMPP_8\htdocs\service/settings/key_file.txt
-21-07-2021 14:23:46|(::1)|exportAllData.php|keyFile oasfaòsdfjaòslkdfjaòsldfkjaslfkj
-21-07-2021 14:34:56|(::1)|exportAllData.php|keyFile D:\XAMPP_8\htdocs\service/settings/key_file.txt
-21-07-2021 14:34:56|(::1)|exportAllData.php|keyFile oasfaòsdfjaòslkdfjaòsldfkjaslfkj
-21-07-2021 14:35:13|(::1)|exportAllData.php|keyFile D:\XAMPP_8\htdocs\service/settings/key_file.txt
-21-07-2021 14:35:13|(::1)|exportAllData.php|keyFile oasfaòsdfjaòslkdfjaòsldfkjaslfkj
-21-07-2021 14:35:13|ERRORE_CLIENT_NON_AUTORIZZATO(::1)|exportAllData.php|!!!|{"codiceEsito":"401 UNAUTHORIZED","descrizioneEsito":"INVALID KEY VALUE: ::1","errore":true}
+21-07-2021 15:01:44|(::1)|exportAllData.php|keyHash $2y$10$1n5mzGlbu/Or7UzG7AjK7.Rd7mi7bhz/cDlFKOJpM6ii0MDfieclq
+21-07-2021 15:01:44|(::1)|exportAllData.php|Api-Key e702eeb5d8d2c50c337Eae7a20C8b599
+21-07-2021 15:01:44|(::1)|exportAllData.php|
+21-07-2021 15:01:44|(::1)|exportAllData.php|$2y$10$bXB40eNoqLXS3CkJDg1xouWQwyaOzv4T1wwxWx6LaaFmE/ypazuUa
+21-07-2021 15:02:26|(::1)|exportAllData.php|keyHash $2y$10$1n5mzGlbu/Or7UzG7AjK7.Rd7mi7bhz/cDlFKOJpM6ii0MDfieclq
+21-07-2021 15:02:26|(::1)|exportAllData.php|Api-Key e702eeb5d8d2c50c337Eae7a20C8b599
+21-07-2021 15:02:26|(::1)|exportAllData.php|
+21-07-2021 15:02:26|(::1)|exportAllData.php|$2y$10$ckTzhrFG8Dyjdm6YFCVfAeKzriWgFLpPeHd7Voe3wUTzEy5w8LMBe
+21-07-2021 15:03:58|(::1)|exportAllData.php|keyHash $2y$10$ckTzhrFG8Dyjdm6YFCVfAeKzriWgFLpPeHd7Voe3wUTzEy5w8LMBe
+21-07-2021 15:03:58|(::1)|exportAllData.php|Api-Key e702eeb5d8d2c50c337Eae7a20C8b599
+21-07-2021 15:03:58|(::1)|exportAllData.php|Key Verification: 1
+21-07-2021 15:17:36|CLIENT_AUTORIZZATO(::1)|exportData.php|startTimeTimestamp|429
+21-07-2021 15:17:36|CLIENT_AUTORIZZATO(::1)|exportData.php|startTimeTimestamp|
+21-07-2021 15:17:36|CLIENT_AUTORIZZATO(::1)|exportData.php|startTimeTimestamp|
+21-07-2021 15:17:44|CLIENT_AUTORIZZATO(::1)|exportData.php|startTimeTimestamp|429
+21-07-2021 15:17:44|CLIENT_AUTORIZZATO(::1)|exportData.php|startTimeTimestamp|
+21-07-2021 15:17:44|CLIENT_AUTORIZZATO(::1)|exportData.php|startTimeTimestamp|
+21-07-2021 15:18:36|CLIENT_AUTORIZZATO(::1)|exportData.php|startTimeTimestamp|200
+21-07-2021 15:18:36|CLIENT_AUTORIZZATO(::1)|exportData.php|startTimeTimestamp|Array
+21-07-2021 15:18:36|CLIENT_AUTORIZZATO(::1)|exportData.php|startTimeTimestamp|

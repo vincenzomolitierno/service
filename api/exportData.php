@@ -4,14 +4,25 @@ require_once dirname(__DIR__) . '/lib/Authorization.class.php';
 require_once dirname(__DIR__) . '/lib/AusinoWrapper.class.php';
 require_once dirname(__DIR__) . '/lib/Log.class.php';
 
-if (Authorization::isAuthorizedClient($_SERVER['REMOTE_ADDR'])) {
- 
     // 2021-01-06T23:55
     // starttime is chronologically the last timepoint
     // endtime is chronologically the first timepoint
-    if(isset($_GET['start']) || isset($_GET['serial'])) {
-        $SerialNumber = $_GET['serial'];
 
+if (Authorization::isAuthorizedClient($_SERVER['REMOTE_ADDR'])) {
+ 
+    if(!Authorization::isValidKey()){
+        $codice_esito = HttpResponse::UNAUTHORIZED;
+        $descrizione_esito = Authorization::ERROR_INVALID_KEY." - from client: ".$_SERVER['REMOTE_ADDR'];
+        $errore = true;
+        $json = HttpResponse::createJsonResponse($codice_esito, $descrizione_esito, $errore);
+    
+        header('HTTP/1.1 '.HttpResponse::UNAUTHORIZED);
+        header('Content-type: application/json');
+        echo $json;
+    
+    } else if(isset($_GET['start']) && isset($_GET['serial'])) {
+        
+        $SerialNumber = $_GET['serial'];
         $UTC = new DateTimeZone("UTC");
 
         $startTime = new DateTime($_GET['start'],$UTC); // the last timepoint
@@ -26,20 +37,12 @@ if (Authorization::isAuthorizedClient($_SERVER['REMOTE_ADDR'])) {
             $endTime->modify('-1 day');
             $endTimeTimestamp = $endTime->getTimestamp();
         }
-
-        // Log::add('startTimeTimestamp', Authorization::AUTHORIZED, $startTime->format('Y-m-d%20H:i')); 
-        // Log::add('endTimeTimestamp', Authorization::AUTHORIZED, $endTime->format('Y-m-d%20H:i')); 
         
-        // *************
         // *** REST  Aqua Robur CALL BY CLASS AusinoWrapper
         $arrHttpResponse = AusinoWrapper::getAllDataFromField($endTime->format('Y-m-d%20H:i'),$startTime->format('Y-m-d%20H:i'), $SerialNumber );
 
         header('HTTP/1.1 '.$arrHttpResponse[HttpResponse::CODICE_ESITO]);
         header('Content-type: application/json');    
-
-        Log::add('startTimeTimestamp', Authorization::AUTHORIZED, $arrHttpResponse[HttpResponse::CODICE_ESITO]);
-        Log::add('startTimeTimestamp', Authorization::AUTHORIZED, $arrHttpResponse[HttpResponse::DESCRIZIONE_ESITO]);
-        Log::add('startTimeTimestamp', Authorization::AUTHORIZED, $arrHttpResponse[HttpResponse::ERRORE]);
     
         if(!$arrHttpResponse[HttpResponse::ERRORE]){
             if ($arrHttpResponse[HttpResponse::CODICE_ESITO]!=200) 
@@ -52,9 +55,14 @@ if (Authorization::isAuthorizedClient($_SERVER['REMOTE_ADDR'])) {
         }  
     
     } else {
-        header('HTTP/1.1 '.$arrHttpResponse[HttpResponse::CODICE_ESITO]);
+        $codice_esito = HttpResponse::BAD_REQUEST;
+        $descrizione_esito = 'Invalid date and/or serial parameter';
+        $errore = true;
+        $json = HttpResponse::createJsonResponse($codice_esito, $descrizione_esito, $errore);
+
+        header('HTTP/1.1 '. HttpResponse::BAD_REQUEST);
         header('Content-type: application/json');   
-        echo 'Invalid date parameters';
+        echo $json;
     }
 
 } else {

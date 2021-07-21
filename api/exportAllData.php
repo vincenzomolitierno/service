@@ -17,6 +17,7 @@ if (Authorization::isAuthorizedClient($_SERVER['REMOTE_ADDR'])) {
         echo $json;
     
     } else if(isset($_GET['start'])) {
+        
         $UTC = new DateTimeZone("UTC");
 
         $startTime = new DateTime($_GET['start'],$UTC); // the last timepoint
@@ -31,9 +32,6 @@ if (Authorization::isAuthorizedClient($_SERVER['REMOTE_ADDR'])) {
             $endTime->modify('-1 day');
             $endTimeTimestamp = $endTime->getTimestamp();
         }
-
-        // Log::add('startTimeTimestamp', Authorization::AUTHORIZED, $startTime->format('Y-m-d%20H:i')); 
-        // Log::add('endTimeTimestamp', Authorization::AUTHORIZED, $endTime->format('Y-m-d%20H:i')); 
         
         // *** REST Aqua Robur CALL BY CLASS AusinoWrapper
         $arrHttpResponse = AusinoWrapper::getAllDataFromField($endTime->format('Y-m-d%20H:i'),$startTime->format('Y-m-d%20H:i'));
@@ -49,9 +47,14 @@ if (Authorization::isAuthorizedClient($_SERVER['REMOTE_ADDR'])) {
         }  
     
     } else {
-        header('HTTP/1.1 '.$arrHttpResponse[HttpResponse::CODICE_ESITO]);
+        $codice_esito = HttpResponse::BAD_REQUEST;
+        $descrizione_esito = 'Invalid date parameter';
+        $errore = true;
+        $json = HttpResponse::createJsonResponse($codice_esito, $descrizione_esito, $errore);
+
+        header('HTTP/1.1 '. HttpResponse::BAD_REQUEST);
         header('Content-type: application/json');   
-        echo 'Invalid date parameters';
+        echo $json;
     }
 
 } else {
@@ -60,7 +63,7 @@ if (Authorization::isAuthorizedClient($_SERVER['REMOTE_ADDR'])) {
     $errore = true;
     $json = HttpResponse::createJsonResponse($codice_esito, $descrizione_esito, $errore);
 
-    header('HTTP/1.1 '.HttpResponse::FORBIDDEN);
+    header('HTTP/1.1 '. HttpResponse::FORBIDDEN);
     header('Content-type: application/json');
     echo $json;
 }
